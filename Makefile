@@ -31,7 +31,7 @@ deploy:
 	kubectl create -f $(PROM_DIRECTORY)/grafana/service.yaml
 
 
-clean:
+destroy:
 	#remove grafana
 	kubectl delete svc grafana -n monitoring
 	kubectl delete deployment grafana -n monitoring

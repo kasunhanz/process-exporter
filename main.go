@@ -12,7 +12,7 @@ func main() {
 	//This section will start the HTTP server and expose
 	//any metrics on the /metrics endpoint.
 
-	//Create a new instance of the foocollector and
+	//Create a new instance of the processCollector and
 	//register it with the prometheus client.
 	processM := newProcessCollector()
 	prometheus.MustRegister(processM)
