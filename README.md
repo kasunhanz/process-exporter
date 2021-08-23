@@ -1,5 +1,5 @@
-# Prometheus core components and custom written exporter to collect metrics
-This project consist with k8s manifest to deploy prometheus core components (Prometheus,AlertManager and Grafana) and a custom prometheus exporter written in Golang to list listening processes on Linux nodes
+# process_exporter custom prometheus metric exporter with Prometheus core components
+This project consist with k8s manifests to deploy prometheus core components (Prometheus,AlertManager and Grafana) and a custom prometheus exporter written in Golang to list listening processes on Linux nodes
 
 ## Installation and Usage of process_exporter
 
@@ -8,9 +8,12 @@ process_exporter will listen on HTTP port 8080 by default
 Build binary using go
 
 ```sh
+go mod download
 go build -o process_exporter
 ./process_exporter
 ```
+
+Pre-requisite to build docker image, make sure you have logged into docker repo
 
 Docker build
 ```sh
@@ -58,6 +61,16 @@ k8s remove all resources
 
 ```sh
 make destroy
+```
+
+k8s deploy / update individual resources
+
+```sh
+make deploy-ns - #create k8 namespace
+make deploy-prometheus - #create/update prometheus resources
+make deploy-alertmanager - #create/update alertmanager resources
+make deploy-grafana - #create/update process-exporter resources
+make deploy-exporter - #create/update process-exporter resources
 ```
 
 By default, each of below services will run on below ports accessible through deployed k8s node. (Services are exposed using nodePort for demo purpose)
