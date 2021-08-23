@@ -96,11 +96,11 @@ Grafana deployement is pre-provisioned with prometheus datasource and dashbaord 
    [PlDk]: <https://github.com/kasunhanz/process-exporter/blob/main/prometheus-deployment/process-exporter/daemonset.yaml>
    [PlDl]: <https://github.com/kasunhanz/process-exporter/blob/main/prometheus-deployment/process-exporter/service.yaml>
 
-## Deployment Architecture"
+## Deployment Architecture
 ![Alt text](images/k8s-deployment.png?raw=true "Deployment Architecture")
 
-## Grafana Dashboard"
+## Grafana Dashboard
 ![Alt text](images/grafana-dashboard.png?raw=true "Grafana Dashboard")
 
-## Slack Notification"
+## Slack Notification
 ![Alt text](images/slack.png?raw=true "Grafana Dashboard")
